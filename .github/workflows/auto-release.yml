@@ -1,0 +1,49 @@
+name: Release
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [new_version_with_actionsflow]
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Checkout Branch
+        run: git checkout main
+      - name: Configure CI Git User
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email ithub-actions[bot]@users.noreply.github.com
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node
+      - name: Update & Build
+        run: |
+          npm ci
+          npm update
+          npm run build
+          npm run test
+      - name: Git status
+        run: git status
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git add dist/main/index.js package.json package-lock.json
+          git commit -m "chore\(release\): 🤖 update actionsflow dependence & build bundle"
+          npm run release
+      - uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          text: Released Packages
+          author_name:
+          fields: repo,message,author,ref,job,took # selectable (default: repo,message)
+        env:
+          GITHUB_TOKEN: ${{ github.token }} # optional
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_RELEASE_WEBHOOK }} # required
+        if: always() # Pick up events even if the job fails or is canceled.

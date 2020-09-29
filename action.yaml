@@ -1,0 +1,29 @@
+name: "Actionsflow Action"
+author: Actionsflow
+description: "Run Actionsflow in Github"
+inputs:
+  using:
+    descript: "actionsflow build runner using, the default value is `auto`, you can also use `local`, `action`"
+    required: false
+    default: "auto"
+  args:
+    description: "actionsflow CLI command, the default value is `build`, you can specify it like `build --verbose`"
+    required: false
+    default: "build"
+  json-secrets:
+    description: secrets context in json format
+    required: false
+    default: ""
+  json-github:
+    description: github context in json format
+    required: false
+    default: ""
+outputs:
+  success:
+    description: "If the build status is success. The value can be 'true', or 'false', if build failed, the action outcome will be set failed"
+runs:
+  using: "node12"
+  main: "dist/main/index.js"
+branding:
+  icon: "send"
+  color: "blue"

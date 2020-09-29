@@ -1,0 +1,9 @@
+on:
+  slack:
+jobs:
+  print:
+    name: Print
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Outputs
+        run: echo 1

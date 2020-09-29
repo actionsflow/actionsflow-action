@@ -1,0 +1,19 @@
+**/dist/**
+**/__tests__/fixtures/
+*.min.js
+**/node_modules/**
+# cache-dirs
+**/.cache
+# ignore built packages
+packages/**/*.js
+!packages/*/src/**/*.js
+
+
+# fixtures
+**/__tests__/fixtures/**
+
+# coverage
+coverage
+
+.yarn
+package-lock.json
