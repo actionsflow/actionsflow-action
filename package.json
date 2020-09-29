@@ -1,6 +1,6 @@
 {
   "name": "actionsflow-action",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "description": "Actionsflow Github Action",
   "keywords": [
