@@ -25,7 +25,7 @@
     "commit": "git-cz",
     "cm": "npm run commit --",
     "prerelease": "npm run build && git add dist/main/index.js && git diff-index --quiet HEAD || git commit -m \"chore: 🤖 build bundle\"",
-    "release": "release-it --only-version"
+    "release": "release-it"
   },
   "bugs": {
     "url": "https://github.com/actionsflow/actionsflow-action/issues"
