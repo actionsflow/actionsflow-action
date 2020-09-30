@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/actionsflow/actionsflow-action/compare/v1.0.2...v1.0.3) (2020-09-30)
+
+
+### Bug Fixes
+
+* correct github bot email ([86b8d8c](https://github.com/actionsflow/actionsflow-action/commit/86b8d8c30120b84c5c8b05f5d632f92accc490b0))
+
 ## [1.0.2](https://github.com/actionsflow/actionsflow-action/compare/v1.0.1...v1.0.2) (2020-09-30)
 
 ## [1.0.1](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.0.1) (2020-09-30)
