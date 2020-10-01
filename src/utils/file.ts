@@ -15,3 +15,10 @@ export const read = (path: string): Promise<string> => {
     });
   });
 };
+
+export function ensureDirectoryExistence(dir: string): void {
+  if (fs.existsSync(dir)) {
+    return;
+  }
+  fs.mkdirSync(dir);
+}

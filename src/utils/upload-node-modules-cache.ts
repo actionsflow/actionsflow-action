@@ -20,18 +20,19 @@ export default async function uploadNodeModulesCache(): Promise<
     // is already exist
     const paths = [`${npmCachePath}`];
 
-    const cacheResultKey =
+    const npmCacheResultKey =
       process.env[ACTIONSFLOW_NODE_MODULES_CACHE_RESULT_KEY];
-    const cacheKey = process.env[ACTIONSFLOW_NODE_MODULES_CACHE_KEY];
-    const hash = await hashFiles([NODE_MODULES_HASH_FILE_PATH]);
-    const key = getNodeModulesCacheKeyPrefix() + hash;
+    const npmCacheKey = process.env[ACTIONSFLOW_NODE_MODULES_CACHE_KEY];
 
-    if (!isExactKeyMatch(cacheKey as string, cacheResultKey)) {
+    if (!isExactKeyMatch(npmCacheKey as string, npmCacheResultKey)) {
+      const hash = await hashFiles([NODE_MODULES_HASH_FILE_PATH]);
+      const npmLatestCacheKey = getNodeModulesCacheKeyPrefix() + hash;
+      const finalCacheKey = npmCacheKey || npmLatestCacheKey;
       try {
-        core.info(`Try to upload npm cache [${key}] from ${paths}`);
-        const cacheId = await cache.saveCache(paths, key);
+        core.info(`Try to upload npm cache [${finalCacheKey}] from ${paths}`);
+        const cacheId = await cache.saveCache(paths, finalCacheKey);
         if (!cacheId) {
-          core.info(`Cannot save npm cache [${key}] at github`);
+          core.info(`Cannot save npm cache [${finalCacheKey}] at github`);
         }
         return cacheId;
       } catch (error) {
@@ -45,7 +46,9 @@ export default async function uploadNodeModulesCache(): Promise<
         return undefined;
       }
     } else {
-      core.info(`Npm cache [${key}] is already exists, do not need to upload`);
+      core.info(
+        `Npm cache [${npmCacheKey}] is already exists, do not need to upload`
+      );
       return undefined;
     }
   } else {

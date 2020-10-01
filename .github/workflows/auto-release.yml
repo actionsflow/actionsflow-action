@@ -40,7 +40,7 @@ jobs:
       - uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
-          text: Released Packages
+          text: Auto release actionsflow-action
           author_name:
           fields: repo,message,author,ref,job,took # selectable (default: repo,message)
         env:

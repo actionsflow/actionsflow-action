@@ -9,6 +9,7 @@ import getBuildRunner from "./utils/get-build-runner";
 import { run as runLocal } from "./local-build";
 import formatSpendTime from "./utils/format-spend-time";
 import stringArgv from "string-argv";
+import { ensureDirectoryExistence, write } from "./utils/file";
 process.on("unhandledRejection", handleError);
 main().catch(handleError);
 
@@ -30,8 +31,11 @@ async function main() {
   const argvs = stringArgv(args);
   core.debug(`use args: ${args}`);
   let isBuild = false;
+  let isClean = false;
   if (argvs[0] && argvs[0].toLowerCase() === "build") {
     isBuild = true;
+  } else if (argvs[0] && argvs[0].toLowerCase() === "clean") {
+    isClean = true;
   }
   if (isBuild) {
     await exportLastUpdateAtEnv();
@@ -43,6 +47,9 @@ async function main() {
         Date.now() - timestamp
       )})`
     );
+  } else if (isClean) {
+    await exportLastUpdateAtEnv();
+    await exportLastCacheKeyEnv();
   }
 
   try {
@@ -92,6 +99,24 @@ async function main() {
       await uploadCache();
       core.info(
         `Upload actionsflow cache complete (${formatSpendTime(
+          Date.now() - timestamp
+        )})`
+      );
+      timestamp = Date.now();
+      await uploadCacheKeyFile();
+      core.info(
+        `Upload actionsflow cache key complete (${formatSpendTime(
+          Date.now() - timestamp
+        )})`
+      );
+    } else if (isClean) {
+      let timestamp = Date.now();
+      // create empty .cache folder
+      ensureDirectoryExistence(".cache");
+      await write(".cache/.keep", "");
+      await uploadCache();
+      core.info(
+        `Upload actionsflow empty cache complete (${formatSpendTime(
           Date.now() - timestamp
         )})`
       );
