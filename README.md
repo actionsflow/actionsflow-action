@@ -1,6 +1,6 @@
 # Actionsflow Action
 
-Actionsflow action for Github. With `actionsflow/actionsflow-action@v1`, you can speed up your Actionsflow workflow build. We will automatically select the best build strategy, using local build or action build, if you use a third-party trigger, then the default will use local build, that is, install npm dependencies, and use local actionsflow to build, if You only use the official triggers, then we will only use the action to build, no need to download anything.
+[Actionsflow](https://github.com/actionsflow/actionsflow) action for Github. With `actionsflow/actionsflow-action@v1`, you can speed up your Actionsflow workflow build. We will automatically select the best build strategy, using local build or action build, if you use a third-party trigger, then the default will use local build, that is, install npm dependencies, and use local actionsflow to build, if You only use the official triggers, then we will only use the action to build, no need to download anything.
 
 All build strategies will use caching, so even if you use third-party triggers, we will cache node_modules to speed up the build.
 
