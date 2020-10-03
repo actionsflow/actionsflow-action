@@ -9,3 +9,8 @@ test("hash file2", async () => {
   const hash = await hashFiles(["./src/__tests__/fixtures/hash2/**"]);
   expect(hash).toBe("3ebfa301dc59196f18593c45e519287a23297589");
 });
+
+test("hash file3", async () => {
+  const hash = await hashFiles(["./src/__tests__/fixtures/.cachehash/**"]);
+  expect(hash).toBe("76e79d73f102793bad5bab87fb1e8368de06bc35");
+});

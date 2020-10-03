@@ -13,6 +13,7 @@ export default async function uploadCache(): Promise<number | undefined> {
     const paths = [`${CACHE_PATH}`];
     const hash = await hashFiles([`${CACHE_PATH}/**`]);
     const key = getCacheKeyPrefix() + hash;
+    core.debug(`Latest cache key: ${key}`);
     const lastCacheKey = process.env[ACTIONSFLOW_CACHE_RESULT_KEY];
     if (lastCacheKey !== key) {
       try {

@@ -113,7 +113,8 @@ async function main() {
       let timestamp = Date.now();
       // create empty .cache folder
       ensureDirectoryExistence(".cache");
-      await write(".cache/.keep", "");
+      const emptyFilePath = ".cache/cachekeep.txt";
+      await write(emptyFilePath, `${timestamp}`);
       await uploadCache();
       core.info(
         `Upload actionsflow empty cache complete (${formatSpendTime(
