@@ -1,6 +1,7 @@
 name: Update Release Alias
 
 on:
+  workflow_dispatch:
   release:
     types: [published]
 
