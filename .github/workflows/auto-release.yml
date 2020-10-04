@@ -35,7 +35,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         run: |
           git add dist/main/index.js package.json package-lock.json
-          git commit -m "chore\(release\): 🤖 update actionsflow dependence & build bundle"
+          git diff-index --quiet HEAD || git commit -m "chore\(release\): 🤖 update actionsflow dependence & build bundle"
           npm run release
       - uses: 8398a7/action-slack@v3
         with:
