@@ -1,6 +1,6 @@
 {
   "name": "actionsflow-action",
-  "version": "1.0.14",
+  "version": "1.0.19",
   "private": true,
   "description": "Actionsflow Github Action",
   "keywords": [
@@ -37,7 +37,7 @@
     "@actions/exec": "^1.0.4",
     "@actions/github": "^4.0.0",
     "@types/command-line-args": "^5.0.0",
-    "actionsflow": "^1.0.1",
+    "actionsflow": "^1.1.1",
     "command-line-args": "^5.1.1",
     "hash-files": "^1.1.1",
     "string-argv": "^0.3.1"

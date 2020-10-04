@@ -1,3 +1,13 @@
+## [1.0.19](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.0.19) (2020-10-04)
+
+## [1.0.18](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.0.18) (2020-10-04)
+
+## [1.0.17](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.0.17) (2020-10-04)
+
+## [1.0.16](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.0.16) (2020-10-04)
+
+## [1.0.15](https://github.com/actionsflow/actionsflow-action/compare/v1.0.14...v1.0.15) (2020-10-04)
+
 ## [1.0.14](https://github.com/actionsflow/actionsflow-action/compare/v1.0.13...v1.0.14) (2020-10-04)
 
 ## [1.0.13](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.0.13) (2020-10-04)
