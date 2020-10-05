@@ -25,7 +25,7 @@
     "lint": "eslint --fix ./src && prettier --write  --loglevel warn ./src",
     "commit": "git-cz",
     "cm": "npm run commit --",
-    "prerelease": "npm run build && git add dist/main/index.js && git diff-index --quiet HEAD || git commit -m \"chore: 🤖 build bundle\"",
+    "prerelease": "npm run build && git add dist/main/index.js dist/post/index.js && git diff-index --quiet HEAD || git commit -m \"chore: 🤖 build bundle\"",
     "release": "release-it"
   },
   "bugs": {
