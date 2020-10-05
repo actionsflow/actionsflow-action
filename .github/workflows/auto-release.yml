@@ -16,11 +16,6 @@ jobs:
         run: |
           git config user.name github-actions[bot]
           git config user.email github-actions[bot]@users.noreply.github.com
-      - name: Sleep for NPM Update
-        if: github.event_name == 'repository_dispatch'
-        uses: jakejarvis/wait-action@master
-        with:
-          time: "5m"
       - uses: actions/cache@v2
         with:
           path: ~/.npm

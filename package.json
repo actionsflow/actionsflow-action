@@ -1,6 +1,6 @@
 {
   "name": "actionsflow-action",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "private": true,
   "description": "Actionsflow Github Action",
   "keywords": [
@@ -17,9 +17,10 @@
   },
   "scripts": {
     "start": "tsc -w -p tsconfig.production.json",
-    "build": "npm run build:main",
+    "build": "npm run build:main && npm run build:post",
     "tsc": "tsc",
     "build:main": "npx ncc build src/main.ts -o dist/main -m",
+    "build:post": "npx ncc build src/post.ts -o dist/post -m",
     "test": "jest --passWithNoTests",
     "lint": "eslint --fix ./src && prettier --write  --loglevel warn ./src",
     "commit": "git-cz",
@@ -37,7 +38,7 @@
     "@actions/exec": "^1.0.4",
     "@actions/github": "^4.0.0",
     "@types/command-line-args": "^5.0.0",
-    "actionsflow": "^1.1.1",
+    "actionsflow": "^1.1.3",
     "command-line-args": "^5.1.1",
     "hash-files": "^1.1.1",
     "string-argv": "^0.3.1"
@@ -61,7 +62,7 @@
     "git-cz": "^4.7.0",
     "glob": "^7.1.6",
     "husky": "^4.3.0",
-    "jest": "^26.4.0",
+    "jest": "^26.5.0",
     "lint-staged": "^10.3.0",
     "micromatch": "^4.0.2",
     "npm-run-all": "^4.1.5",

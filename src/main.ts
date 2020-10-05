@@ -137,7 +137,15 @@ async function main() {
       await uploadCacheKeyFile();
     }
     core.setOutput("success", false);
-    throw error;
+    if (isBuild) {
+      core.saveState("success", "false");
+      core.info(
+        "There are some errors occurred, but we will continue the process, we'll throw error at post action"
+      );
+      core.info(error);
+    } else {
+      throw error;
+    }
   }
   core.info(
     `Actionsflow done in ${formatSpendTime(Date.now() - allStartTimeStamp)}`
