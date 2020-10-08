@@ -15,37 +15,42 @@ export default async function uploadCacheKeyFile(): Promise<
     process.env[ACTIONSFLOW_LATEST_CACHE_KEY] ||
     process.env[ACTIONSFLOW_LAST_CACHE_KEY]
   ) {
-    const actionsflowLatestCacheKey =
-      process.env[ACTIONSFLOW_LATEST_CACHE_KEY] ||
-      (process.env[ACTIONSFLOW_LAST_CACHE_KEY] as string);
-    const artifactClient = artifact.create();
-    const artifactName =
-      ARTIFACTS_NAME_PREFIX_FOR_CACHE_KEY + actionsflowLatestCacheKey;
-    const cacheKeyFilePath = getCacheKeyFilePath();
-    // save file
-    await write(cacheKeyFilePath, actionsflowLatestCacheKey);
-    const files = [cacheKeyFilePath];
-    const rootDirectory = process.cwd(); // Also possible to use __dirname
-    const options = {
-      continueOnError: true,
-    };
+    try {
+      const actionsflowLatestCacheKey =
+        process.env[ACTIONSFLOW_LATEST_CACHE_KEY] ||
+        (process.env[ACTIONSFLOW_LAST_CACHE_KEY] as string);
+      const artifactClient = artifact.create();
+      const artifactName =
+        ARTIFACTS_NAME_PREFIX_FOR_CACHE_KEY + actionsflowLatestCacheKey;
+      const cacheKeyFilePath = getCacheKeyFilePath();
+      // save file
+      await write(cacheKeyFilePath, actionsflowLatestCacheKey);
+      const files = [cacheKeyFilePath];
+      const rootDirectory = process.cwd(); // Also possible to use __dirname
+      const options = {
+        continueOnError: true,
+      };
+      const uploadResponse = await artifactClient.uploadArtifact(
+        artifactName,
+        files,
+        rootDirectory,
+        options
+      );
+      core.debug(
+        `upload actionsflow cache key file success, response: ${JSON.stringify(
+          uploadResponse,
+          null,
+          2
+        )}`
+      );
 
-    const uploadResponse = await artifactClient.uploadArtifact(
-      artifactName,
-      files,
-      rootDirectory,
-      options
-    );
-
-    core.debug(
-      `upload actionsflow cache key file success, response: ${JSON.stringify(
-        uploadResponse,
-        null,
-        2
-      )}`
-    );
-
-    return uploadResponse;
+      return uploadResponse;
+    } catch (error) {
+      core.info(
+        `An error occurred when uploading actionsflow cache key file: ${error}`
+      );
+      throw error;
+    }
   } else {
     core.info(
       `Can not found env ACTIONSFLOW_LATEST_CACHE_KEY or ACTIONSFLOW_LAST_CACHE_KEY, skip to upload actionsflow cache key file`

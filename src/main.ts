@@ -137,6 +137,7 @@ async function main() {
   } catch (error) {
     core.debug("Finish command but error: start to post task");
     if (isBuild) {
+      // Still send cache key file
       await uploadCacheKeyFile();
     }
     core.setOutput("success", false);
