@@ -4,6 +4,7 @@ import restoreCache from "./utils/restore-cache";
 import uploadCache from "./utils/upload-cache";
 import uploadCacheKeyFile from "./utils/upload-cache-key-file";
 import exportLastUpdateAtEnv from "./utils/export-last-update-at-env";
+import exportCurrentRunCreatedAtEnv from "./utils/export-current-run-created-at-env";
 import exportLastCacheKeyEnv from "./utils/export-last-cache-key-env";
 import getBuildRunner from "./utils/get-build-runner";
 import { run as runLocal } from "./local-build";
@@ -39,6 +40,7 @@ async function main() {
   }
   if (isBuild) {
     await exportLastUpdateAtEnv();
+    await exportCurrentRunCreatedAtEnv();
     await exportLastCacheKeyEnv();
     const timestamp = Date.now();
     await restoreCache();
@@ -49,6 +51,7 @@ async function main() {
     );
   } else if (isClean) {
     await exportLastUpdateAtEnv();
+    await exportCurrentRunCreatedAtEnv();
     await exportLastCacheKeyEnv();
   }
 
@@ -134,6 +137,7 @@ async function main() {
   } catch (error) {
     core.debug("Finish command but error: start to post task");
     if (isBuild) {
+      // Still send cache key file
       await uploadCacheKeyFile();
     }
     core.setOutput("success", false);
