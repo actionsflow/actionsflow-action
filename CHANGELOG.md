@@ -1,3 +1,12 @@
+## [1.0.22](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.0.22) (2020-10-06)
+
+## [1.0.21](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.0.21) (2020-10-05)
+
+
+### Bug Fixes
+
+* 🐛 suppor throw error at post action ([48cc730](https://github.com/actionsflow/actionsflow-action/commit/48cc73020e84dab73ae2e92201e0b31b957419f7))
+
 ## [1.0.20](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.0.20) (2020-10-05)
 
 ## [1.0.19](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.0.19) (2020-10-04)
