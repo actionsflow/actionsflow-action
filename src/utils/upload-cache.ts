@@ -3,11 +3,12 @@ import * as core from "@actions/core";
 import { getCacheKeyPrefix, getCacheExists } from "./cache";
 import { hashFiles } from "./hash";
 import {
-  CACHE_PATH,
   ACTIONSFLOW_LATEST_CACHE_KEY,
   ACTIONSFLOW_CACHE_RESULT_KEY,
 } from "../constant";
+import getCachePath from "./cache-path";
 export default async function uploadCache(): Promise<number | undefined> {
+  const CACHE_PATH = getCachePath();
   if (getCacheExists()) {
     // is already exist
     const paths = [`${CACHE_PATH}`];

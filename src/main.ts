@@ -7,6 +7,7 @@ import exportLastUpdateAtEnv from "./utils/export-last-update-at-env";
 import exportCurrentRunCreatedAtEnv from "./utils/export-current-run-created-at-env";
 import exportLastCacheKeyEnv from "./utils/export-last-cache-key-env";
 import getBuildRunner from "./utils/get-build-runner";
+import exportBuildRunner from "./utils/export-build-runner";
 import { run as runLocal } from "./local-build";
 import formatSpendTime from "./utils/format-spend-time";
 import stringArgv from "string-argv";
@@ -33,12 +34,18 @@ async function main() {
   core.debug(`use args: ${args}`);
   let isBuild = false;
   let isClean = false;
+  let buildRunner = "action";
   if (argvs[0] && argvs[0].toLowerCase() === "build") {
     isBuild = true;
   } else if (argvs[0] && argvs[0].toLowerCase() === "clean") {
     isClean = true;
   }
   if (isBuild) {
+    buildRunner = await getBuildRunner({
+      using: using,
+      args: args,
+    });
+    await exportBuildRunner(buildRunner);
     await exportLastUpdateAtEnv();
     await exportCurrentRunCreatedAtEnv();
     await exportLastCacheKeyEnv();
@@ -57,10 +64,6 @@ async function main() {
 
   try {
     if (isBuild) {
-      const buildRunner = await getBuildRunner({
-        using: using,
-        args: args,
-      });
       if (jsonSecrets) {
         const secretsObj = JSON.parse(jsonSecrets);
         args += ` --json-secrets ${JSON.stringify(secretsObj)}`;
