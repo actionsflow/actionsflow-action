@@ -25,6 +25,17 @@ test("get cache below v1.3 path", async () => {
 });
 test("get cache gt v1.3 path", async () => {
   await exportBuildRunner("local");
+  const cwd = process.cwd();
+  try {
+    process.chdir(path.resolve(__dirname, "fixtures/above13"));
+  } catch (err) {
+    console.log("chdir: " + err);
+  }
   const cachePath = getCachePath();
+  try {
+    process.chdir(cwd);
+  } catch (err) {
+    console.log("chdir: " + err);
+  }
   expect(cachePath).toBe(".actionsflow");
 });
