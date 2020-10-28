@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.0) (2020-10-28)
+
+
+### Features
+
+* 🎸 change cache path .cache to .actionsflow ([bc3dbd4](https://github.com/actionsflow/actionsflow-action/commit/bc3dbd46021ce4166f90efee3e613236a404a73f))
+
 ## [1.0.27](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.0.27) (2020-10-28)
 
 ## [1.0.26](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.0.26) (2020-10-24)
