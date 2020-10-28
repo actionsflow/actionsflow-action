@@ -6,7 +6,8 @@ packages2
 packages3
 # Icon must end with two \r
 Icon
-
+# Actionsflow cache
+.actionsflow
 # Thumbnails
 ._*
 

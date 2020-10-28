@@ -1,11 +1,11 @@
 import {
   ACTIONSFLOW_CACHE_KEY_PREFIX,
-  CACHE_PATH,
   ACTIONSFLOW_CACHE_KEY_FILE_NAME,
   ACTIONSFLOW_NODE_MODULES_CACHE_KEY_PREFIX,
 } from "../constant";
 import fs from "fs";
 import path from "path";
+import getCachePath from "./cache-path";
 export const getCacheKeyPrefix = (): string => {
   return `${ACTIONSFLOW_CACHE_KEY_PREFIX}-${process.platform}-`;
 };
@@ -14,7 +14,7 @@ export const getNodeModulesCacheKeyPrefix = (): string => {
 };
 
 export const getCacheExists = (): boolean => {
-  return fs.existsSync(CACHE_PATH);
+  return fs.existsSync(getCachePath());
 };
 
 export const getCacheKeyFilePath = (): string => {
