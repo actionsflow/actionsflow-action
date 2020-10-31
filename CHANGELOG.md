@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/actionsflow/actionsflow-action/compare/v1.1.1...v1.1.2) (2020-10-31)
+
+
+### Bug Fixes
+
+* back to last version ([6e86c43](https://github.com/actionsflow/actionsflow-action/commit/6e86c4391d4514cc8812bd015efc47514cdea066))
+
 ## [1.1.1](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.1) (2020-10-31)
 
 # [1.1.0](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.0) (2020-10-28)
