@@ -38,7 +38,7 @@
     "@actions/exec": "^1.0.4",
     "@actions/github": "^4.0.0",
     "@types/command-line-args": "^5.0.0",
-    "actionsflow": "^1.4.1",
+    "actionsflow": "^1.4.0",
     "command-line-args": "^5.1.1",
     "hash-files": "^1.1.1",
     "resolve-cwd": "^3.0.0",
