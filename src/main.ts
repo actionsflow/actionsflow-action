@@ -117,9 +117,9 @@ async function main() {
       );
     } else if (isClean) {
       let timestamp = Date.now();
-      // create empty .cache folder
-      ensureDirectoryExistence(".cache");
-      const emptyFilePath = ".cache/cachekeep.txt";
+      // create empty .actionsflow folder
+      ensureDirectoryExistence(".actionsflow");
+      const emptyFilePath = ".actionsflow/cachekeep.txt";
       await write(emptyFilePath, `${timestamp}`);
       await uploadCache();
       core.info(
