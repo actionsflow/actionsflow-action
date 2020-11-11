@@ -1,3 +1,10 @@
+## [1.1.19](https://github.com/actionsflow/actionsflow-action/compare/v1.1.18...v1.1.19) (2020-11-11)
+
+
+### Bug Fixes
+
+* clean .cache bug ([decb010](https://github.com/actionsflow/actionsflow-action/commit/decb01077c1cb3ba27fa2f26a41dc81e19d2360a))
+
 ## [1.1.18](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.18) (2020-11-10)
 
 ## [1.1.17](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.17) (2020-11-10)
