@@ -1,3 +1,5 @@
+## [1.1.28](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.28) (2020-12-25)
+
 ## [1.1.27](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.27) (2020-12-24)
 
 ## [1.1.26](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.26) (2020-12-22)
