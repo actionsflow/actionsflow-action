@@ -1,11 +1,30 @@
+## [1.1.30](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.30) (2021-01-04)
+
+## [1.1.29](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.29) (2020-12-29)
+
+## [1.1.28](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.28) (2020-12-25)
+
+## [1.1.27](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.27) (2020-12-24)
+
+## [1.1.26](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.26) (2020-12-22)
+
+## [1.1.25](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.25) (2020-12-18)
+
+## [1.1.24](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.24) (2020-12-15)
+
+## [1.1.23](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.23) (2020-12-14)
+
+## [1.1.22](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.22) (2020-11-25)
+
+## [1.1.21](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.21) (2020-11-13)
+
 ## [1.1.20](https://github.com/actionsflow/actionsflow-action/compare/v1.1.19...v1.1.20) (2020-11-11)
 
 ## [1.1.19](https://github.com/actionsflow/actionsflow-action/compare/v1.1.18...v1.1.19) (2020-11-11)
 
-
 ### Bug Fixes
 
-* clean .cache bug ([decb010](https://github.com/actionsflow/actionsflow-action/commit/decb01077c1cb3ba27fa2f26a41dc81e19d2360a))
+- clean .cache bug ([decb010](https://github.com/actionsflow/actionsflow-action/commit/decb01077c1cb3ba27fa2f26a41dc81e19d2360a))
 
 ## [1.1.18](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.18) (2020-11-10)
 
@@ -41,19 +60,17 @@
 
 ## [1.1.2](https://github.com/actionsflow/actionsflow-action/compare/v1.1.1...v1.1.2) (2020-10-31)
 
-
 ### Bug Fixes
 
-* back to last version ([6e86c43](https://github.com/actionsflow/actionsflow-action/commit/6e86c4391d4514cc8812bd015efc47514cdea066))
+- back to last version ([6e86c43](https://github.com/actionsflow/actionsflow-action/commit/6e86c4391d4514cc8812bd015efc47514cdea066))
 
 ## [1.1.1](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.1) (2020-10-31)
 
 # [1.1.0](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.0) (2020-10-28)
 
-
 ### Features
 
-* 🎸 change cache path .cache to .actionsflow ([bc3dbd4](https://github.com/actionsflow/actionsflow-action/commit/bc3dbd46021ce4166f90efee3e613236a404a73f))
+- 🎸 change cache path .cache to .actionsflow ([bc3dbd4](https://github.com/actionsflow/actionsflow-action/commit/bc3dbd46021ce4166f90efee3e613236a404a73f))
 
 ## [1.0.27](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.0.27) (2020-10-28)
 
@@ -69,10 +86,9 @@
 
 ## [1.0.21](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.0.21) (2020-10-05)
 
-
 ### Bug Fixes
 
-* 🐛 suppor throw error at post action ([48cc730](https://github.com/actionsflow/actionsflow-action/commit/48cc73020e84dab73ae2e92201e0b31b957419f7))
+- 🐛 suppor throw error at post action ([48cc730](https://github.com/actionsflow/actionsflow-action/commit/48cc73020e84dab73ae2e92201e0b31b957419f7))
 
 ## [1.0.20](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.0.20) (2020-10-05)
 
@@ -94,10 +110,9 @@
 
 ## [1.0.11](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.0.11) (2020-10-03)
 
-
 ### Bug Fixes
 
-* 🐛 reset cache content hash duplication problem ([b02b530](https://github.com/actionsflow/actionsflow-action/commit/b02b5308b0adf10d0a1614e5086133f203128ccf))
+- 🐛 reset cache content hash duplication problem ([b02b530](https://github.com/actionsflow/actionsflow-action/commit/b02b5308b0adf10d0a1614e5086133f203128ccf))
 
 ## [1.0.10](https://github.com/actionsflow/actionsflow-action/compare/v1.0.9...v1.0.10) (2020-10-01)
 
@@ -115,10 +130,9 @@
 
 ## [1.0.3](https://github.com/actionsflow/actionsflow-action/compare/v1.0.2...v1.0.3) (2020-09-30)
 
-
 ### Bug Fixes
 
-* correct github bot email ([86b8d8c](https://github.com/actionsflow/actionsflow-action/commit/86b8d8c30120b84c5c8b05f5d632f92accc490b0))
+- correct github bot email ([86b8d8c](https://github.com/actionsflow/actionsflow-action/commit/86b8d8c30120b84c5c8b05f5d632f92accc490b0))
 
 ## [1.0.2](https://github.com/actionsflow/actionsflow-action/compare/v1.0.1...v1.0.2) (2020-09-30)
 
@@ -126,8 +140,6 @@
 
 # 1.0.0 (2020-09-29)
 
-
 ### Features
 
-* 🎸 initial commit ([73cfbf3](https://github.com/actionsflow/actionsflow-action/commit/73cfbf3e1fc813554e165785342b14ef63c695e1))
-
+- 🎸 initial commit ([73cfbf3](https://github.com/actionsflow/actionsflow-action/commit/73cfbf3e1fc813554e165785342b14ef63c695e1))
