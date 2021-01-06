@@ -1,0 +1,12 @@
+on:
+  webhook:
+jobs:
+  print:
+    name: Print
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Outputs
+        env:
+          body: ${{(on.rss.webhook.outputs.body)}}
+        run: |
+          echo body: $body

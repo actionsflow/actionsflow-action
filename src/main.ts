@@ -12,6 +12,8 @@ import { run as runLocal } from "./local-build";
 import formatSpendTime from "./utils/format-spend-time";
 import stringArgv from "string-argv";
 import { ensureDirectoryExistence, write } from "./utils/file";
+import { getEscapedArgs } from "./utils/get-escape-args";
+
 process.on("unhandledRejection", handleError);
 main().catch(handleError);
 
@@ -66,11 +68,11 @@ async function main() {
     if (isBuild) {
       if (jsonSecrets) {
         const secretsObj = JSON.parse(jsonSecrets);
-        args += ` --json-secrets ${JSON.stringify(secretsObj)}`;
+        args += ` --json-secrets ${getEscapedArgs(JSON.stringify(secretsObj))}`;
       }
       if (jsonGithub) {
         const githubObj = JSON.parse(jsonGithub);
-        args += ` --json-github ${JSON.stringify(githubObj)}`;
+        args += ` --json-github ${getEscapedArgs(JSON.stringify(githubObj))}`;
       }
       if (buildRunner === "action") {
         core.info("Use action actionsflow-action to build");

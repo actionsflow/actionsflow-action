@@ -4,6 +4,7 @@ import uploadNodeModulesCache from "./utils/upload-node-modules-cache";
 import * as core from "@actions/core";
 import formatSpendTime from "./utils/format-spend-time";
 import stringArgv from "string-argv";
+import shellEscape from "shell-escape";
 
 export const install = async (options?: { cwd: string }): Promise<void> => {
   const installOptions = {
@@ -43,7 +44,8 @@ export const run = async (
     )})`
   );
   timestamp = Date.now();
-  await exec.exec(`npx`, ["actionsflow", ...stringArgv(args)], {
+  const argsArr = stringArgv(args);
+  await exec.exec(`npx`, ["actionsflow", shellEscape(argsArr)], {
     failOnStdErr: true,
   });
   core.info(
