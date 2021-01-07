@@ -39,12 +39,12 @@
     "@actions/github": "^4.0.0",
     "@types/command-line-args": "^5.0.0",
     "@types/shell-escape": "^0.2.0",
-    "shell-escape": "^0.2.0",
-    "actionsflow": "^1.9.1",
+    "actionsflow": "^1.10.0",
     "command-line-args": "^5.1.1",
     "hash-files": "^1.1.1",
     "resolve-cwd": "^3.0.0",
     "semver": "^7.3.4",
+    "shell-escape": "^0.2.0",
     "string-argv": "^0.3.1"
   },
   "devDependencies": {
