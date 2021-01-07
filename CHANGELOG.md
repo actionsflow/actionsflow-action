@@ -1,3 +1,9 @@
+# [1.2.0](https://github.com/actionsflow/actionsflow-action/compare/v1.1.30...v1.2.0) (2021-01-07)
+
+### Features
+
+- espace shell args ([8bbc640](https://github.com/actionsflow/actionsflow-action/commit/8bbc640d965e5e392cc2ba652a0fa8aa45da7680))
+
 ## [1.1.30](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.30) (2021-01-04)
 
 ## [1.1.29](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.1.29) (2020-12-29)
