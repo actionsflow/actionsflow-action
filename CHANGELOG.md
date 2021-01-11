@@ -1,3 +1,9 @@
+## [1.2.4](https://github.com/actionsflow/actionsflow-action/compare/v1.2.3...v1.2.4) (2021-01-11)
+
+### Bug Fixes
+
+- github runner bug ([fc51020](https://github.com/actionsflow/actionsflow-action/commit/fc51020baf5dcb49c75dbaa1ab561145d9529c4a))
+
 ## [1.2.3](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.2.3) (2021-01-07)
 
 ## [1.2.2](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.2.2) (2021-01-07)
