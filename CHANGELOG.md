@@ -1,3 +1,5 @@
+## [1.2.5](https://github.com/actionsflow/actionsflow-action/compare/v1...v1.2.5) (2021-01-21)
+
 ## [1.2.4](https://github.com/actionsflow/actionsflow-action/compare/v1.2.3...v1.2.4) (2021-01-11)
 
 ### Bug Fixes
