@@ -22,7 +22,7 @@ outputs:
   success:
     description: "If the build status is success. The value can be 'true', or 'false', if build failed, the action outcome will be set failed"
 runs:
-  using: "node12"
+  using: "node16"
   main: "dist/main/index.js"
   post: "dist/post/index.js"
 branding:
